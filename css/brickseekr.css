@@ -1,0 +1,1088 @@
+*,
+
+*::before,
+
+*::after{
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-size: 100%;
+}
+
+body{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a{
+  color:#2E2E2E;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 0.9em;  /* Size of all hyperlinks */
+}
+
+/* Header */
+header{
+  width: 100%;
+  background-color: #F4F4F4;
+}
+
+header{
+  display: flex;
+}
+
+.NavBar{
+  width: 100%;
+  display: flex;
+  min-width: 600px;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  position: relative; 
+}
+
+header .logo{
+  width: 120px;
+  height: auto; 
+  display: block;
+  margin: 0; 
+  padding: 0;
+}
+
+li{
+  cursor: pointer;
+  line-height: 2px;
+  display:inline-block;
+  padding: 40px;
+}
+
+li a{
+  color: #2e2e2e;
+  position: relative;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-right: 35px;
+  transition: color 0.3s linear;
+}
+
+li a:after{
+  content: " ";
+  position: absolute;
+  background-color: #007BA7;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: -10px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .3s;
+}
+
+li a:hover::after{
+  font-size: 21px;
+  cursor: pointer;
+  text-decoration:underline;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+main {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem; 
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.intro {
+  text-align: center;
+  margin: 20px auto;
+}
+
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.feature {
+  text-align: center;
+  max-width: 300px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BA7;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #005f7f;
+}
+
+.Set_image_block_main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 40%; 
+  position: relative; 
+  height: 500px; 
+  padding-top: 50px; 
+}
+
+.set_description {
+  display: block;
+  width: 55%; /* Increase width to fit more text per line */
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: left; /* Ensure text aligns properly */
+  font-size: 0.9rem; /* Optionally reduce font size for more compact text */
+  line-height: 1.4; /* Slightly tighter line spacing */
+  word-spacing: 0.05rem; /* Minimize word spacing for a compact layout */
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%; /* Full width of the parent block */
+  height: 100%; /* Adjust to fit parent block */
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center; /* Center dots horizontally */
+  align-items: center; /* Align dots vertically */
+  position: absolute; /* Keep dots within the image slider */
+  bottom: 20px; /* Space dots slightly above the bottom */
+  width: 100%; /* Match the width of the slider */
+  height: 50px;
+  gap: 1px; /* Adjust spacing between dots */
+  z-index: 50; /* Ensure dots are above images */
+}
+
+.Set_image {
+  display: none;
+  max-width: 100%; /* Adjust to fit within the container */
+  max-height: 90%; /* Prevent the image from overflowing the block */
+  object-fit: contain; /* Maintain aspect ratio */
+  display: block; /* Ensure it doesn’t behave like an inline element */
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white; 
+  border-radius: 50px;
+  padding: 5px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0; 
+  width: 250px; /* Set the width of the search bar */
+  position: absolute;
+  top: 50%; /* Center vertically relative to the nav bar */
+  right: 20px; /* Align to the right with spacing */
+  transform: translateY(-50%); /* Adjust for proper vertical centering */
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 8px 15px;
+  border-radius: 50px;
+  font-size: 1rem;
+  width: 200px;
+  font-family: 'Arial', sans-serif;
+}
+
+.search-bar button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #007BA7;
+  margin-left: 10px;
+}
+
+/* Main Page Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-image: url("../image/index_batman.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+}
+
+.search-container-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 50px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 60%;
+  max-width: 600px;
+}
+
+.search-container-hero input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+}
+
+.search-container-hero button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #007BA7;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.search-container-hero button:hover {
+  color: #005f7f;
+}
+
+/* Main Page Feature Cards Section */
+.feature-cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 50px 20px;
+  background-color: #f9f9f9; /* Light background color for contrast */
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  width: 280px; /* Fixed width for uniform size */
+  height: 350px; /* Fixed height for consistent box size */
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space content evenly */
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Subtle hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%; /* Fit the card's width */
+  max-height: 150px; /* Limit image height */
+  object-fit: cover; /* Keep proportions */
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #007BA7; /* Highlighted blue text */
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555; /* Subtle gray text for descriptions */
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BA7;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #005f7f; /* Darker blue on hover */
+}
+
+/* Style for individual dots */
+
+.radio{
+  display: none;
+}
+
+#radio-1:checked ~ .slider #slide-1,
+#radio-2:checked ~ .slider #slide-2,
+#radio-3:checked ~ .slider #slide-3 {
+    display: block;
+}
+
+/* .slider{
+  width: 100%;
+  position: absolute;
+  height: 0;
+  padding-top: 56,25%;
+  background: #141414;
+  overflow: hidden;
+} */
+
+  .Set_image_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 100px 0;
+    transition: all 0.15s ease;
+    overflow: hidden;
+  }
+
+  /* .slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  } */
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px; /* Adjust for desired placement */
+    width: 100%;
+    gap: 10px; /* Spacing between dots */
+    z-index: 10;
+}
+
+.dots label {
+  width: 15px;
+  height: 15px;
+  background: black; 
+  margin: 0 5px;
+  border-radius: 50%; /* Make the dots circular */
+  opacity: 0.5; /* Subtle visibility */
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.dots label:hover {
+  opacity: 0.8; 
+}
+
+/* .radio:checked ~ .dots label {
+  opacity: 0.5; 
+  background-color: black; 
+} */
+
+#radio-1:checked ~ .dots #label-1,
+#radio-2:checked ~ .dots #label-2,
+#radio-3:checked ~ .dots #label-3 {
+    opacity: 1; 
+    background-color: #007BA7; 
+}
+
+
+#radio-1:checked ~ .dots #label-1:hover,
+#radio-2:checked ~ .dots #label-2:hover,
+#radio-3:checked ~ .dots #label-3:hover {
+    opacity: 1;
+    background-color: #007BA7;
+}
+
+input[type="radio"]:checked + label {
+  opacity: 1; /* Fully visible */
+  background-color: #007BA7; /* Highlight color for active dot */
+}
+
+.Set_image:first-child {
+    display: block;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for proper centering */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  z-index: 2; /* Ensure buttons appear above images */
+}
+
+
+#prev {
+    left: 0px;
+}
+
+#next {
+    right: 0px;
+}
+
+.active {
+    display: block;
+}
+
+
+
+
+
+
+
+
+  
+.Set_image_block::-webkit-scrollbar{
+    display: none;
+  }
+
+.Set_image_block::-webkit-scrollbar{
+  display: none;
+}
+
+
+.Set_image_block img{
+
+}
+
+
+.slider-nav a:hover{
+  opacity: 100%;
+}
+
+
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+}
+
+
+
+.set_description{
+  /* display: block; */
+  float: left;
+  min-width: 20vw;
+  max-width: 40vw;
+  padding-top: 0; /* Remove any padding at the top */
+  margin-top: -10px;
+}
+
+.h1 {
+  margin: -10px 40px 10px 40px; /* Use a negative top margin to move it higher */
+  font-size: 40px; /* Keep the same font size */
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  text-align: left; /* Ensure alignment */
+}
+
+.set_description_container{
+  display: block;
+  margin: 20px 40px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+  gap: 40 px;
+}
+
+.rating{
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  /* padding: 300px, 10px; */
+  /* border-radius: 30px; */
+  gap: 8px;
+  background: transparent;
+}
+
+.clearfix:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* .rating:nth-child(1){
+  transform: translateX(-80px);
+}
+.rating:nth-child(3){
+  transform: translateX(80px);
+} */
+
+
+.rating input {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+} 
+
+.rating label{
+  display: inline;
+}
+
+.rating input::before{
+  content: "\f005";
+  position: absolute;
+  font-family: fontAwesome;
+  font-size: 34px;
+  color: #111;
+  transition: 0.5s;
+}
+
+.rating input:hover ~ input::before,
+.rating input:hover::before,
+.rating input:checked ~ input::before,
+.rating input:checked::before{
+  color: var(--c);
+} 
+
+.desc_text {
+  width: 100%; /* Ensure full width */
+  margin: 20px auto; /* Add top and bottom margin for spacing */
+  font-size: 1rem; /* Adjust font size */
+  line-height: 1.5; /* Ensure proper line spacing */
+  word-spacing: 0.05rem; /* Slightly reduce word spacing */
+  text-align: justify; /* Distribute text evenly */
+}
+
+.short_desc{
+  margin: 20px 0px;
+}
+
+.yr{
+  display: inline-block;
+  padding-left: 5px;
+}
+.weight{
+  display: inline-block;
+  padding-left: 5px;
+}
+.itemd{
+  display: inline-block;
+  padding-left: 5px;
+}
+.ages{
+  display: inline-block;
+  padding-left: 5px;
+}
+
+.bricks{
+  display: inline-block;
+  margin: 20px 20px 0px 0px;
+  /* margin-bottom: 20px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: green; */
+}
+.minifigs{
+  display: inline-block;
+  margin: 20px 20px 0px 0px;
+}
+
+.brk{
+  height: 90px;
+  width: 70px;
+  object-fit: cover;
+  /* margin-bottom: 0px; */
+}
+
+.mnfg{
+  height: 90px;
+  width: 70px;
+  /* margin-bottom: 0px; */
+}
+
+.ico p{
+  text-align: center;
+}
+
+.bd{
+  display: inline-block;
+  margin-left: 10px;
+  color: red;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-right: 35px;
+  transition: color 0.3s linear;
+}
+
+.bd_all{
+  display: inline-block;
+  margin-left: 10px;
+  color: whitesmoke;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: rgb(24, 203, 216);
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-right: 35px;
+  transition: color 0.3s linear;
+}
+
+.shops_container {
+  width: 100%; /* Full page width */
+  display: flex;
+  flex-direction: column; /* Stacks children (h2 and shop_block) vertically */
+  align-items: center; /* Centers all children horizontally */
+  gap: 20px; /* Adds spacing between header and shop blocks */
+  margin-bottom: 150px; /* Add space below the shops_container */
+}
+
+.shops_container h2 {
+  text-align: center; /* Center-aligns the header text */
+  font-size: 1.5rem; /* Optional: Adjust font size */
+  margin-bottom: 10px; /* Adds spacing below the header */
+}
+
+.shop_block {
+  display: flex; /* Align elements in a row */
+  justify-content: space-between; /* Spread elements out */
+  align-items: center; /* Center elements vertically */
+  width: 70vw; /* Takes 80% of the viewport width */
+  max-width: 1200px; /* Optional max width */
+  height: 100px; /* Fixed height for all shop blocks */
+  padding: 20px; /* Add padding for inner spacing */
+  background-color: #ffffff; /* White background */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  margin: 10px 0; /* Vertical spacing between blocks */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Prevent content from overflowing */
+  box-sizing: border-box; /* Include padding in the width/height */
+}
+
+.shop_logo {
+  width: 50px; /* Fixed size for logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.shop_info {
+  margin-left: 10px; /* Space between logo and info */
+  flex: 0.5; /* Take up flexible space */
+  font-size: 0.9rem; /* Adjust font size */
+  color: #555; /* Neutral color for text */
+  display: flex; /* Arrange info and status in a row */
+  flex-direction: column; /* Stack info items vertically */
+}
+
+.shop_status {
+  display: flex;
+  margin-left: 20px; /* Push stock status slightly to the right */
+  font-size: 1rem; /* Adjust size for better visibility */
+  font-weight: bold; /* Bold text */
+  padding: 5px 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+
+}
+
+.in_stock {
+  color: #ffffff; /* White text */
+  background-color: #28a745; /* Green background for in-stock */
+}
+
+.out_of_stock {
+  color: #ffffff; /* White text */
+  background-color: #dc3545; /* Red background for out-of-stock */
+}
+
+.shop_price {
+  font-size: 1.2rem; /* Larger font size for price */
+  font-weight: bold; /* Emphasize the price */
+  color: #333; /* Dark text color */
+  text-align: right; /* Align text to the right */
+  margin-left: 10px; /* Add spacing between status and price */
+}
+
+.shop_button {
+  padding: 8px 16px; /* Padding for button */
+  background-color: #007BA7; /* Blue background */
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.shop_button:hover {
+  background-color: #005f7f; /* Darker blue on hover */
+}
+
+/* TOP 1000 sets*/
+
+
+.lego-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between blocks */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the grid */
+}
+
+/* Lego Box */
+.lego-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  display: block; /* Ensure the link covers the entire block */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.lego-link:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Existing Lego Box Styles */
+.lego-box {
+  width: 200px; /* Fixed width */
+  height: 300px; /* Adjusted height to accommodate long names */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space out image and name */
+  align-items: center; /* Center horizontally */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.lego-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add hover shadow */
+}
+
+.lego-box {
+  width: 200px; /* Fixed width */
+  height: 300px; /* Adjusted height to accommodate long names */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space out image and name */
+  align-items: center; /* Center horizontally */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.lego-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Container */
+.lego-image-container {
+  width: 100%; /* Full width of the block */
+  height: 150px; /* Fixed height for uniform image placement */
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  margin-bottom: 10px; /* Space between image and name */
+  overflow: hidden; /* Prevent overflowing content */
+  border-radius: 5px; /* Optional rounded corners for aesthetics */
+}
+
+/* Lego Image */
+.lego-image {
+  max-width: 100%; /* Ensure image fits within the container */
+  max-height: 100%; /* Ensure image height fits within the container */
+  object-fit: contain; /* Preserve aspect ratio */
+}
+
+/* Lego Name */
+.lego-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007BA7;
+  margin: 0;
+  text-align: center;
+  word-wrap: break-word; /* Handle long names */
+  height: 60px; /* Fixed height to align names across all blocks */
+  line-height: 1.2; /* Adjust line spacing for multi-line names */
+  overflow: hidden; /* Ensure long text doesn’t overflow */
+  display: -webkit-box; /* For multi-line ellipsis */
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center; /* Center pagination */
+  align-items: center;
+  margin: 20px 0; /* Space around pagination */
+  gap: 10px; /* Space between links */
+}
+
+.page-link {
+  text-decoration: none; /* Remove underline */
+  color: #007BA7; /* Default text color */
+  background-color: #f4f4f4; /* Light background */
+  padding: 10px 15px; /* Padding for clickable area */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.page-link:hover {
+  background-color: #007BA7; /* Highlight background on hover */
+  color: #ffffff; /* White text on hover */
+}
+
+.page-link.active {
+  background-color: #007BA7; /* Active page background */
+  color: #ffffff; /* Active page text */
+  cursor: default; /* Disable pointer for active page */
+}
+
+
+/* Hero Section for About Us */
+/* Hero Section */
+.about-hero {
+  background-image: url("../image/about_us_background.png"); /* Replace with your background image */
+  background-size: cover; /* Ensure full coverage */
+  background-position: bottom; /* Center the image */
+  background-repeat: no-repeat;
+  height: 70vh; /* Adjust the height */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align content to the right */
+  justify-content: center; /* Center vertically */
+  color: white;
+  padding: 0 50px; /* Add padding on the sides */
+  text-align: right; /* Align text to the right */
+}
+
+/* .about-hero .hero-content {
+  background: rgba(0, 0, 0, 0.4); 
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%; 
+  max-width: 1000px; 
+  backdrop-filter: blur(5px); 
+} */
+
+.about-hero h1 {
+  font-size: 4rem; /* Larger font size for prominence */
+  font-weight: 800; /* Bold text */
+  text-transform: uppercase; /* Capitalize all letters */
+  text-align:right; /* Align text for better readability */
+  letter-spacing: 2px; /* Add spacing between letters */
+  color: #FFD700; /* Bright Lego yellow */
+  margin-bottom: 20px; /* Add spacing below the title */
+  margin-right: 20px;
+}
+
+/* Hero Subheading */
+.about-hero p {
+  font-size: 1.4rem; /* Slightly larger font for readability */
+  font-weight: 300; /* Light weight for elegant look */
+  color: #FFFFFF; /* Subtle white text */
+  line-height: 2; /* Increase line spacing for better readability */
+  max-width: 600px; /* Restrict text width */
+  margin-top: 10px;
+  text-align:right; /* Align text for better readability */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add shadow for better contrast on the background */
+  margin-right: 20px;
+}
+
+/* Content Section */
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Create flexible columns */
+  gap: 20px; /* Space between the blocks */
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center;
+  justify-content: space-between; /* Spread content evenly */
+  height: 280px; /* Set a consistent height */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-section:hover {
+  transform: translateY(-10px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-section .icon {
+  /* width: 150px; */
+  height: 150px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  color: #007BA7;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 85%; /* Restrict text width for readability */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+
+.footer {
+  position: relative; /* Relative positioning for the entire footer */
+  background-color: #2c2c2c; /* Dark gray background */
+  color: #ffffff; /* White text */
+  padding: 40px 20px 60px; /* Add extra padding at the bottom for button */
+  text-align: center; /* Center-align content */
+  font-family: Arial, sans-serif; /* Clean font */
+}
+
+/* Footer Header */
+.footer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Footer Navigation */
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.footer-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #00aaff;
+}
+
+
+/* Back to Top Button */
+.back-to-top {
+  position: absolute; /* Position at the bottom center */
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  background-color: transparent; /* No background color */
+  color: #ffffff; /* White text color */
+  border: none; /* No border */
+  font-size: 1rem; /* Adjust font size */
+  cursor: pointer; /* Pointer cursor */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.back-to-top:hover {
+  background-color: rgba(255, 255, 255, 0.4); /* Slightly darker background on hover */
+  border-color: rgba(255, 255, 255, 0.6); /* More visible border on hover */
+  color: #000000; /* Dark text on hover for better visibility */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  position: absolute; /* Position relative to the footer */
+  bottom: 10px;
+  right: 20px; /* Align to the bottom-right corner */
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-align: right; /* Align text to the right */
+}

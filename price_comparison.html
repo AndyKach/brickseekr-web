@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Andrei Kachanov">
+    <meta name="description" content="Lego sets price comparison">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="css/brickseekr.css" />
+    <title>BrickSeekr</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+</head>
+    <body>
+        <header>
+            <div class="NavBar">
+                <a href="index.html">
+                    <picture>
+                        <img src="icons/logo_brick.png" alt="logo" class="logo">
+                    </picture>
+                </a>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="price_comparison.html" class="navig">Price Comparison</a>
+                        </li>
+                        <li>
+                            <a href="topsets.html" class="navig">Top 1000 Sets</a>
+                        </li>
+                        <li>
+                            <a href="aboutus.html" class="navig">About Us</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for Lego sets...">
+                    <button type="button">🔍</button>
+                </div>
+                
+            </div>
+        </header>
+      
+        <main>
+            <div class="Set_image_block_main">
+                <div class="slider">
+                    <img id="slide-1" src="image/peelybone.png" alt="img1" class="Set_image">
+                    <img id="slide-2" src="image/peelybone2.png" alt="img2" class="Set_image">
+                    <img id="slide-3" src="image/peelybone3.png" alt="img3" class="Set_image">
+                    <button id="prev" class="nav-button">❮</button>
+                    <button id="next" class="nav-button">❯</button>
+                
+                    <!-- Radio inputs and labels together -->
+                    <input type="radio" class="radio" name="images" id="radio-1" checked>
+                    <label for="radio-1" id="label-1"></label>
+                
+                    <input type="radio" class="radio" name="images" id="radio-2">
+                    <label for="radio-2" id="label-2"></label>
+                
+                    <input type="radio" class="radio" name="images" id="radio-3">
+                    <label for="radio-3" id="label-3"></label>
+                </div>
+                <div class="dots">
+                    <label for="radio-1" id="label-1"></label>
+                    <label for="radio-2" id="label-2"></label>
+                    <label for="radio-3" id="label-3"></label>
+                </div>
+            </div>
+            <div class="set_description">
+                <div class="h1">
+                    LEGO 77072 Peely Bone
+                </div>
+                <div class="set_description_container">
+                    <div class="rating">
+                        <!-- 1st star -->
+                        <input type="radio" name="clr1" style="--c:#ff9933;">
+                        <label for="r1"></label>
+                        <!-- 2nd star -->
+                        <input type="radio" name="clr2" style="--c:#ff9933;">
+                        <label for="r2"></label>
+                        <!-- 3rd star -->
+                        <input type="radio" name="clr3" style="--c:#ff9933;">
+                        <label for="r3"></label>
+                        <!-- 4th star -->
+                        <input type="radio" name="clr4" style="--c:#ff9933;">
+                        <label for="r4"></label>
+                        <!-- 5th star -->
+                        <input type="radio" name="clr5" style="--c:#ff9933;">
+                        <label for="r5"></label>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="desc_text">
+                        LEGO 77072 Peely Bone is a 1,414 piece Fortnite exclusive set released in 2024. It features a detailed, buildable model of Peely Bone from Fortnite, a half-banana, half-skeleton design with movable arms.
+                    </div>
+                    <div class="short_desc">
+                        Year released: <div class="yr">2024</div>
+                    </div>
+                    <div class="short_desc">
+                        Weight:<div class="weight">1688 g</div>
+                    </div>
+                    <div class="short_desc">
+                        Item dimensions:<div class="itemd">28 x 45.6 x 8.7 cm</div>
+                    </div>
+                    <div class="short_desc">
+                        Ages:<div class="ages">18+</div>
+                    </div>
+                    <div class="short_desc">
+                        Items contains of:
+                        <div class="ico">
+                            <div class="bricks">
+                                <img src="image/bricks.jpg" alt="brick image" class="brk">
+                                <p>1414</p>
+                            </div>
+                            <div class="minifigs">
+                                <img src="image/minifigure.jpg" alt="minifig image" class="mnfg">
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <div class="best_deal"> Best deal:
+                            <p class="bd">120€</p>
+                            <a href="index.html" class="bd_all"><p class="bd_all_txt">See all</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="shops_container">
+            <h2>Offers</h2>
+            <div class="shop_block">
+                <img src="icons/alza_cz.svg" alt="Shop Logo" class="shop_logo">
+                <div class="shop_info">
+                    <p>Delivery: Free</p>
+                    <p>Rating: ★★★★☆</p>
+                </div>
+                <div class="shop_status in_stock">In Stock</div>
+                <p class="shop_price">€120</p>
+                <a href="https://shop1.example.com" class="shop_button" target="_blank">Visit Shop</a>
+            </div>
+            <div class="shop_block">
+                <img src="icons/brand-lego.svg" alt="Shop Logo" class="shop_logo">
+                <div class="shop_info">
+                    <p>Delivery: €5</p>
+                    <p>Rating: ★★★☆☆</p>
+                </div>
+                <div class="shop_status out_of_stock">Out of Stock</div>
+                <p class="shop_price">€140</p>
+                <a href="https://shop2.example.com" class="shop_button" target="_blank">Visit Shop</a>
+            </div>
+            <div class="shop_block">
+                <img src="icons/Sparkys.png" alt="Shop Logo" class="shop_logo">
+                <div class="shop_info">
+                    <p>Delivery: Free</p>
+                    <p>Rating: ★★★★☆</p>
+                </div>
+                <div class="shop_status in_stock">In Stock</div>
+                <p class="shop_price">€123</p>
+                <a href="https://shop1.example.com" class="shop_button" target="_blank">Visit Shop</a>
+            </div>
+            <div class="shop_block">
+                <img src="icons/museum-of-bricks-logo.png" alt="Shop Logo" class="shop_logo">
+                <div class="shop_info">
+                    <p>Delivery: Free</p>
+                    <p>Rating: ★★★★☆</p>
+                </div>
+                <div class="shop_status in_stock">In Stock</div>
+                <p class="shop_price">€124</p>
+                <a href="https://shop1.example.com" class="shop_button" target="_blank">Visit Shop</a>
+            </div>
+            <div class="shop_block">
+                <img src="icons/amazon_de.png" alt="Shop Logo" class="shop_logo">
+                <div class="shop_info">
+                    <p>Delivery: €10</p>
+                    <p>Rating: ★★★★☆</p>
+                </div>
+                <div class="shop_status in_stock">In Stock</div>
+                <p class="shop_price">€128</p>
+                <a href="https://shop1.example.com" class="shop_button" target="_blank">Visit Shop</a>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <h2>Brick Seekr</h2>
+                <nav class="footer-nav">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2024 Brick Seekr — All rights reserved</p>
+                <p>Designed and developed by <strong>Your Company</strong></p>
+            </div>
+        </footer>
+        <script src="js/js.js"></script>
+    </body>
+</html>
+
+
+
+
+
