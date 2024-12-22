@@ -1,0 +1,62 @@
+.feature-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Light background color for contrast */
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 280px; /* Fixed width for uniform size */
+    height: 350px; /* Fixed height for consistent box size */
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space content evenly */
+    align-items: center;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* Subtle hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+    width: 100%; /* Fit the card's width */
+    max-height: 150px; /* Limit image height */
+    object-fit: cover; /* Keep proportions */
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007BA7; /* Highlighted blue text */
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #555; /* Subtle gray text for descriptions */
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BA7;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+  
+  .cta-button:hover {
+    background-color: #005f7f; /* Darker blue on hover */
+  }

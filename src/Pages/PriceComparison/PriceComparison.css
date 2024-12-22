@@ -1,0 +1,476 @@
+
+.main_PriceComparison {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem; 
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.intro {
+  text-align: center;
+  margin: 20px auto;
+}
+
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.feature {
+  text-align: center;
+  max-width: 300px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BA7;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #005f7f;
+}
+
+.Set_image_block_main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 40%; 
+  position: relative; 
+  height: 500px; 
+  padding-top: 50px; 
+}
+
+.set_description {
+  display: block;
+  width: 55%; /* Increase width to fit more text per line */
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: left; /* Ensure text aligns properly */
+  font-size: 0.9rem; /* Optionally reduce font size for more compact text */
+  line-height: 1.4; /* Slightly tighter line spacing */
+  word-spacing: 0.05rem; /* Minimize word spacing for a compact layout */
+}
+
+.slider {
+    position: relative;
+    width: 70%;
+    max-width: 800px;
+    height: 500px;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.slider-nav {
+  display: flex;
+  justify-content: center; /* Center dots horizontally */
+  align-items: center; /* Align dots vertically */
+  position: absolute; /* Keep dots within the image slider */
+  bottom: 20px; /* Space dots slightly above the bottom */
+  width: 100%; /* Match the width of the slider */
+  height: 50px;
+  gap: 1px; /* Adjust spacing between dots */
+  z-index: 50; /* Ensure dots are above images */
+}
+
+.Set_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0; /* Hide all images initially */
+    transition: opacity 0.5s ease-in-out;
+    z-index: 0;
+  }
+.Set_image.active {
+    opacity: 1; /* Show the active image */
+    z-index: 1; /* Bring the active image to the front */
+  }
+  
+  .Set_image.hidden {
+    opacity: 0; /* Hide inactive images */
+    z-index: 0;
+  }
+
+.radio{
+  display: none;
+}
+
+#radio-1:checked ~ .slider #slide-1,
+#radio-2:checked ~ .slider #slide-2,
+#radio-3:checked ~ .slider #slide-3 {
+    display: block;
+}
+
+  .Set_image_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 100px 0;
+    transition: all 0.15s ease;
+    overflow: hidden;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px; /* Adjust for desired placement */
+    width: 100%;
+    gap: 10px; /* Spacing between dots */
+    z-index: 10;
+}
+
+.dots label {
+  width: 15px;
+  height: 15px;
+  background: black; 
+  margin: 0 5px;
+  border-radius: 50%; /* Make the dots circular */
+  opacity: 0.5; /* Subtle visibility */
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.dots label:hover {
+  opacity: 0.8; 
+}
+
+#radio-1:checked ~ .dots #label-1,
+#radio-2:checked ~ .dots #label-2,
+#radio-3:checked ~ .dots #label-3 {
+    opacity: 1; 
+    background-color: #007BA7; 
+}
+
+
+#radio-1:checked ~ .dots #label-1:hover,
+#radio-2:checked ~ .dots #label-2:hover,
+#radio-3:checked ~ .dots #label-3:hover {
+    opacity: 1;
+    background-color: #007BA7;
+}
+
+input[type="radio"]:checked + label {
+  opacity: 1; /* Fully visible */
+  background-color: #007BA7; /* Highlight color for active dot */
+}
+
+.Set_image:first-child {
+    display: block;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    z-index: 2;
+}
+
+#prev {
+    left: 0px;
+}
+
+#next {
+    right: 0px;
+}
+
+.active {
+    display: block;
+}
+  
+.Set_image_block::-webkit-scrollbar{
+    display: none;
+  }
+
+.Set_image_block::-webkit-scrollbar{
+  display: none;
+}
+
+
+.slider-nav a:hover{
+  opacity: 100%;
+}
+
+
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+}
+
+
+
+.set_description{
+  float: left;
+  min-width: 20vw;
+  max-width: 40vw;
+  padding-top: 0; /* Remove any padding at the top */
+  margin-top: -10px;
+}
+
+.h1 {
+  margin: -10px 40px 10px 40px; /* Use a negative top margin to move it higher */
+  font-size: 40px; /* Keep the same font size */
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  text-align: left; /* Ensure alignment */
+}
+
+.set_description_container{
+  display: block;
+  margin: 20px 40px;
+  gap: 40 px;
+}
+
+.rating{
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  gap: 8px;
+  background: transparent;
+}
+
+.clearfix:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.rating input {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+} 
+
+.rating label{
+  display: inline;
+}
+
+.rating input::before{
+  content: "\f005";
+  position: absolute;
+  font-family: fontAwesome;
+  font-size: 34px;
+  color: #111;
+  transition: 0.5s;
+}
+
+.rating input:hover ~ input::before,
+.rating input:hover::before,
+.rating input:checked ~ input::before,
+.rating input:checked::before{
+  color: var(--c);
+} 
+
+.desc_text {
+  width: 100%; /* Ensure full width */
+  margin: 20px auto; /* Add top and bottom margin for spacing */
+  font-size: 1rem; /* Adjust font size */
+  line-height: 1.5; /* Ensure proper line spacing */
+  word-spacing: 0.05rem; /* Slightly reduce word spacing */
+  text-align: justify; /* Distribute text evenly */
+}
+
+.short_desc{
+  margin: 20px 0px;
+}
+
+.yr{
+  display: inline-block;
+  padding-left: 5px;
+}
+.weight{
+  display: inline-block;
+  padding-left: 5px;
+}
+.itemd{
+  display: inline-block;
+  padding-left: 5px;
+}
+.ages{
+  display: inline-block;
+  padding-left: 5px;
+}
+
+.bricks{
+  display: inline-block;
+  margin: 20px 20px 0px 0px;
+}
+.minifigs{
+  display: inline-block;
+  margin: 20px 20px 0px 0px;
+}
+
+.brk{
+  height: 90px;
+  width: 70px;
+  object-fit: cover;
+}
+
+.mnfg{
+  height: 90px;
+  width: 70px;
+}
+
+.ico p{
+  text-align: center;
+}
+
+.bd{
+  display: inline-block;
+  margin-left: 10px;
+  color: red;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-right: 35px;
+  transition: color 0.3s linear;
+}
+
+.bd_all{
+  display: inline-block;
+  margin-left: 10px;
+  color: whitesmoke;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: rgb(24, 203, 216);
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-right: 35px;
+  transition: color 0.3s linear;
+}
+
+.shops_container {
+  width: 100%; /* Full page width */
+  display: flex;
+  flex-direction: column; /* Stacks children (h2 and shop_block) vertically */
+  align-items: center; /* Centers all children horizontally */
+  gap: 20px; /* Adds spacing between header and shop blocks */
+  margin-bottom: 150px; /* Add space below the shops_container */
+}
+
+.shops_container h2 {
+  text-align: center; /* Center-aligns the header text */
+  font-size: 1.5rem; /* Optional: Adjust font size */
+  margin-bottom: 10px; /* Adds spacing below the header */
+}
+
+.shop_block {
+  display: flex; /* Align elements in a row */
+  justify-content: space-between; /* Spread elements out */
+  align-items: center; /* Center elements vertically */
+  width: 70vw; /* Takes 80% of the viewport width */
+  max-width: 1200px; /* Optional max width */
+  height: 100px; /* Fixed height for all shop blocks */
+  padding: 20px; /* Add padding for inner spacing */
+  background-color: #ffffff; /* White background */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  margin: 10px 0; /* Vertical spacing between blocks */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Prevent content from overflowing */
+  box-sizing: border-box; /* Include padding in the width/height */
+}
+
+.shop_logo {
+  width: 50px; /* Fixed size for logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.shop_info {
+  margin-left: 10px; /* Space between logo and info */
+  flex: 0.5; /* Take up flexible space */
+  font-size: 0.9rem; /* Adjust font size */
+  color: #555; /* Neutral color for text */
+  display: flex; /* Arrange info and status in a row */
+  flex-direction: column; /* Stack info items vertically */
+}
+
+.shop_status {
+  display: flex;
+  margin-left: 20px; /* Push stock status slightly to the right */
+  font-size: 1rem; /* Adjust size for better visibility */
+  font-weight: bold; /* Bold text */
+  padding: 5px 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+
+}
+
+.in_stock {
+  color: #ffffff; /* White text */
+  background-color: #28a745; /* Green background for in-stock */
+}
+
+.out_of_stock {
+  color: #ffffff; /* White text */
+  background-color: #dc3545; /* Red background for out-of-stock */
+}
+
+.shop_price {
+  font-size: 1.2rem; /* Larger font size for price */
+  font-weight: bold; /* Emphasize the price */
+  color: #333; /* Dark text color */
+  text-align: right; /* Align text to the right */
+  margin-left: 10px; /* Add spacing between status and price */
+}
+
+.shop_button {
+  padding: 8px 16px; /* Padding for button */
+  background-color: #007BA7; /* Blue background */
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.shop_button:hover {
+  background-color: #005f7f; /* Darker blue on hover */
+}
