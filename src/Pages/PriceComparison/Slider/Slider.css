@@ -1,0 +1,70 @@
+/* General slider container styles */
+.slider {
+  position: relative;
+  width: 70%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Slider images */
+/* .slider-images {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+} */
+
+.Set_image {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.Set_image.active {
+  display: block;
+}
+
+/* Navigation buttons */
+.nav-button {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Circular buttons */
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  z-index: 10; /* Ensure buttons are on top of other elements */
+}
+
+#prev {
+  left: -0px;
+}
+
+#next {
+  right: -0px;
+}
+
+/* Main slider container */
+.slider-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px; /* Ensure spacing between the slider and dots */
+}
+
