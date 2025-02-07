@@ -1,0 +1,21 @@
+.bd_all {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 10px;
+  color: whitesmoke;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: rgb(24, 203, 216);
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-right: 35px;
+  transition: color 0.3s linear;
+}
+
+.bd_all:hover {
+  background-color: black; /* Black background on hover */
+  color: white; /* White text on hover */
+}

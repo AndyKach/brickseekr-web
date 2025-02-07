@@ -1,0 +1,131 @@
+
+.lego-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between blocks */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the grid */
+}
+
+/* Lego Box */
+.lego-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  display: block; /* Ensure the link covers the entire block */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.lego-link:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Existing Lego Box Styles */
+.lego-box {
+  width: 200px; /* Fixed width */
+  height: 300px; /* Adjusted height to accommodate long names */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space out image and name */
+  align-items: center; /* Center horizontally */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.lego-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add hover shadow */
+}
+
+.lego-box {
+  width: 200px; /* Fixed width */
+  height: 300px; /* Adjusted height to accommodate long names */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space out image and name */
+  align-items: center; /* Center horizontally */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.lego-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Container */
+.lego-image-container {
+  width: 100%; /* Full width of the block */
+  height: 150px; /* Fixed height for uniform image placement */
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  margin-bottom: 10px; /* Space between image and name */
+  overflow: hidden; /* Prevent overflowing content */
+  border-radius: 5px; /* Optional rounded corners for aesthetics */
+}
+
+/* Lego Image */
+.lego-image {
+  max-width: 100%; /* Ensure image fits within the container */
+  max-height: 100%; /* Ensure image height fits within the container */
+  object-fit: contain; /* Preserve aspect ratio */
+}
+
+/* Lego Name */
+.lego-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007BA7;
+  margin: 0;
+  text-align: center;
+  word-wrap: break-word; /* Handle long names */
+  height: 60px; /* Fixed height to align names across all blocks */
+  line-height: 1.2; /* Adjust line spacing for multi-line names */
+  overflow: hidden; /* Ensure long text doesn’t overflow */
+  display: -webkit-box; /* For multi-line ellipsis */
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center; /* Center pagination */
+  align-items: center;
+  margin: 20px 0; /* Space around pagination */
+  gap: 10px; /* Space between links */
+}
+
+.page-link {
+  text-decoration: none; /* Remove underline */
+  color: #007BA7; /* Default text color */
+  background-color: #f4f4f4; /* Light background */
+  padding: 10px 15px; /* Padding for clickable area */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.page-link:hover {
+  background-color: #007BA7; /* Highlight background on hover */
+  color: #ffffff; /* White text on hover */
+}
+
+.page-link.active {
+  background-color: #007BA7; /* Active page background */
+  color: #ffffff; /* Active page text */
+  cursor: default; /* Disable pointer for active page */
+}
