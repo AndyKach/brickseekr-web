@@ -1,0 +1,35 @@
+/* See All Button */
+.see-all-button {
+  /* display: flex;*/
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between text and arrow */
+  padding: 10px 20px;
+  background-color: rgba(173, 216, 230, 0.3); /* Light blue background */
+  color: #007bff; /* Blue text */
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #add8e6; /* Light blue border */
+  border-radius: 50px; /* Rounded edges */
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.see-all-button:hover {
+  background-color: #007bff; /* Darker blue on hover */
+  color: white;
+}
+
+.see-all-button svg {
+  transition: transform 0.3s ease-in-out;
+}
+
+.see-all-button:hover svg {
+  transform: translateX(5px); /* Moves arrow slightly to the right */
+}
+@media (max-width: 768px) {
+  .see-all-button {
+    display: none;
+  }
+}

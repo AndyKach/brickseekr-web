@@ -1,0 +1,48 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-image: url(".//index_batman.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+  }
+  
+  .search-container-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 600px;
+  }
+  
+  .search-container-hero input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+  }
+  
+  .search-container-hero button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #007BA7;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .search-container-hero button:hover {
+    color: #005f7f;
+  }

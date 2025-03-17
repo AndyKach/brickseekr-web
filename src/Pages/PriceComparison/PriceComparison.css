@@ -1,0 +1,545 @@
+/* Price Comparison web */
+.main_PriceComparison {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.intro {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.feature {
+  text-align: center;
+  max-width: 300px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007ba7;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #005f7f;
+}
+
+.set-not-found-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.set-not-found-hero-content {
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  padding: 50px;
+  border-radius: 8px;
+}
+
+.set-not-found-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.set-not-found-hero p {
+  font-size: 1.25rem;
+}
+
+/* Set_image_block_main */
+.Set_image_block_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 40%;
+}
+
+.set_description {
+  display: block;
+  width: 55%; /* Increase width to fit more text per line */
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: left; /* Ensure text aligns properly */
+  font-size: 0.9rem; /* Optionally reduce font size for more compact text */
+  line-height: 1.4; /* Slightly tighter line spacing */
+  word-spacing: 0.05rem; /* Minimize word spacing for a compact layout */
+}
+
+.slider {
+  position: relative;
+  width: 70%;
+  max-width: 800px;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center; /* Center dots horizontally */
+  align-items: center; /* Align dots vertically */
+  position: absolute; /* Keep dots within the image slider */
+  bottom: 20px; /* Space dots slightly above the bottom */
+  width: 100%; /* Match the width of the slider */
+  height: 50px;
+  gap: 1px; /* Adjust spacing between dots */
+  z-index: 50; /* Ensure dots are above images */
+}
+
+.Set_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0; /* Hide all images initially */
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+}
+.Set_image.active {
+  opacity: 1; /* Show the active image */
+  z-index: 1; /* Bring the active image to the front */
+}
+
+.Set_image.hidden {
+  opacity: 0; /* Hide inactive images */
+  z-index: 0;
+}
+
+.Set_image_block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 100px 0;
+  transition: all 0.15s ease;
+  overflow: hidden;
+}
+
+/* set_description */
+.set_description {
+  float: left;
+  min-width: 20vw;
+  /* max-width: 40vw; */
+  padding-top: 0; /* Remove any padding at the top */
+  margin-top: -10px;
+  color: #555;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+}
+
+.h1 {
+  margin: 10px 40px 10px 40px;
+  font-size: 40px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  text-align: left; /* Ensure alignment */
+  color: #222; /* Darker text for better focus */
+}
+
+.set_description_container {
+  display: block;
+  margin: 20px 40px;
+  gap: 40 px;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.desc_text {
+  width: 100%; /* Ensure full width */
+  margin: 20px auto; /* Add top and bottom margin for spacing */
+  font-size: 1rem; /* Adjust font size */
+  line-height: 1.8;
+  word-spacing: 0.1rem;
+  text-align: justify; /* Distribute text evenly */
+}
+
+.short_desc {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
+  font-weight: 500;
+}
+
+.short_desc div {
+  display: inline-block;
+  font-weight: bold;
+  color: #333333;
+}
+
+.yr {
+  display: inline-block;
+  padding-left: 5px;
+}
+.weight {
+  display: inline-block;
+  padding-left: 5px;
+}
+.itemd {
+  display: inline-block;
+  padding-left: 5px;
+}
+.ages {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+.bricks {
+  display: inline-block;
+  margin: 20px 20px 0px 0px;
+  color: #444;
+}
+.minifigs {
+  display: inline-block;
+  margin: 20px 20px 0px 0px;
+  color: #444;
+}
+
+.brk {
+  height: 90px;
+  width: 70px;
+  object-fit: cover;
+}
+
+.mnfg {
+  height: 90px;
+  width: 70px;
+}
+
+.ico {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap if needed */
+  gap: 15px; /* Moderate gap between items */
+  align-items: center;
+  justify-content: left; /* Center items horizontally */
+  margin-top: 10px;
+}
+
+.ico img {
+  width: 80px; /* Set a comfortable size for icons */
+  height: auto;
+  object-fit: contain;
+}
+
+.ico p {
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+.bd {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: red;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-right: 35px;
+  transition: color 0.3s linear;
+}
+
+/* .bd_all {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 10px;
+  color: whitesmoke;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: rgb(24, 203, 216);
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-right: 35px;
+  transition: color 0.3s linear;
+} */
+
+/* shops_container */
+.shops_container {
+  width: 100%; /* Full page width */
+  display: flex;
+  flex-direction: column; /* Stacks children (h2 and shop_block) vertically */
+  align-items: center; /* Centers all children horizontally */
+  gap: 20px; /* Adds spacing between header and shop blocks */
+  margin-bottom: 205px; /* Add space below the shops_container */
+}
+
+.shops_container h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.shop_block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw; /* 70% of the viewport width */
+  max-width: 1200px; /* Maximum width */
+  height: 100px; /* Fixed height on desktop */
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.shop_logo {
+  width: 50px; /* Fixed size for logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.shop_info {
+  margin-left: 10px; /* Space between logo and info */
+  flex: 0.5; /* Take up flexible space */
+  font-size: 0.9rem; /* Adjust font size */
+  color: #555; /* Neutral color for text */
+  display: flex; /* Arrange info and status in a row */
+  flex-direction: column; /* Stack info items vertically */
+}
+
+.shop_status {
+  display: flex;
+  margin-left: 20px; /* Push stock status slightly to the right */
+  font-size: 1rem; /* Adjust size for better visibility */
+  font-weight: bold; /* Bold text */
+  padding: 5px 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.in_stock {
+  color: #ffffff; /* White text */
+  background-color: #28a745; /* Green background for in-stock */
+}
+
+.out_of_stock {
+  color: #ffffff; /* White text */
+  background-color: #dc3545; /* Red background for out-of-stock */
+}
+
+.shop_price {
+  font-size: 1.2rem; /* Larger font size for price */
+  font-weight: bold; /* Emphasize the price */
+  color: #333; /* Dark text color */
+  text-align: right; /* Align text to the right */
+  margin-left: 10px; /* Add spacing between status and price */
+}
+
+.shop_button:hover {
+  background-color: #005f7f; /* Darker blue on hover */
+}
+
+.shop_button_container {
+  display: inline-block;
+  width: 100%; /* Take up space like the button */
+  height: 50px; /* Same height as the button */
+  /* Ensure the space is maintained even when the button is hidden */
+}
+
+.shop_button_placeholder {
+  display: inline-block;
+  width: 30%; /* Ensure it takes the space */
+  height: 50px; /* Match the button height */
+}
+
+.shop_button {
+  padding: 8px 16px; /* Padding for button */
+  background-color: #007ba7; /* Blue background */
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.shop_button.invisible {
+  visibility: hidden; /* Hides the button but maintains its space */
+}
+
+/* Alternative Mobile Responsive Styles for PriceComparison Page */
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+  /* Switch main container to column layout */
+  .main_PriceComparison {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    margin: 0 auto;
+  }
+  /* Slider Container: full width, fixed height */
+  .Set_image_block_main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Slider: full width and fixed height (adjust as needed) */
+  .slider {
+    width: 100%;
+    height: 250px; /* Adjust as needed */
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Slider Images: cover the slider container */
+  .Set_image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Slider Navigation (if any): ensure buttons are scaled down */
+  .nav-button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .dots {
+    gap: 5px;
+    margin-top: 5px;
+  }
+  .dot,
+  .dots label {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Set Description: take full width, center text */
+  .set_description {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .h1 {
+    font-size: 1.6rem;
+    margin: 0.5rem auto;
+    text-align: center;
+    width: 90%;
+  }
+
+  .set_description_container {
+    width: 100%;
+    margin: 0.5rem auto;
+  }
+
+  .ico {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .ico img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+  .ico p {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .icon-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon-number {
+    font-size: 0.9rem;
+  }
+
+  .desc_text,
+  .short_desc {
+    font-size: 0.9rem;
+    margin: 1rem auto;
+  }
+
+  /* Shops Container: full width with shop blocks stacking vertically */
+  .shops_container {
+    width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 80px;
+  }
+
+  .shop_block {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  /* Adjust shop logo size */
+  .shop_logo {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+
+  /* Center shop info text */
+  .shop_info {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* Reduce font sizes in shop details */
+  .shop_status,
+  .shop_price,
+  .shop_button {
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+}

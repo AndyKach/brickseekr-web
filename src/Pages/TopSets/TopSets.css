@@ -1,0 +1,145 @@
+.lego-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px; /* Space between blocks */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the grid */
+}
+
+/* Lego Box */
+.lego-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  display: block; /* Ensure the link covers the entire block */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.lego-link:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Existing Lego Box Styles */
+.lego-box {
+  width: 200px; /* Fixed width */
+  height: 300px; /* Adjusted height to accommodate long names */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space out image and name */
+  align-items: center; /* Center horizontally */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.lego-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Lego Image */
+.lego-image {
+  max-height: 150px; /* Constrain image height */
+  max-width: 100%; /* Ensure image fits within the container */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain;
+  margin-bottom: 10px; /* Space between image and name */
+}
+
+/* Lego Name */
+.lego-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007ba7;
+  margin: 0;
+  text-align: center;
+  word-wrap: break-word;
+  height: 60px; /* Fixed height */
+  line-height: 1.2;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.page-link {
+  text-decoration: none;
+  color: #007ba7;
+  background-color: #f4f4f4;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.page-link:hover {
+  background-color: #007ba7;
+  color: #fff;
+}
+
+.page-link.active {
+  background-color: #007ba7;
+  color: #fff;
+  cursor: default;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+  .lego-container {
+    width: 100%; /* Use full width */
+    max-width: 100%; /* Prevent shrinking below full width */
+    margin: 0 auto; /* Center container horizontally */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    justify-items: center; /* Center grid items within each cell */
+  }
+
+  .lego-box {
+    width: 150px;
+    height: 225px; /* Proportional height reduction */
+    padding: 10px;
+  }
+
+  .lego-image {
+    max-height: 100px; /* Reduced image height for vertical images */
+    margin-bottom: 5px;
+  }
+
+  .lego-name {
+    font-size: 0.9rem;
+    height: 50px;
+    -webkit-line-clamp: 2; /* Fewer lines for shorter name display */
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: row; /* Force horizontal layout */
+    justify-content: center; /* Center them */
+    align-items: center;
+    margin: 20px 0;
+    gap: 10px;
+  }
+
+  .page-link {
+    padding: 8px 12px;
+  }
+}

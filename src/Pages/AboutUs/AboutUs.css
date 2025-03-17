@@ -1,0 +1,141 @@
+/* About Us - Desktop Styles */
+
+/* Hero Section */
+.about-hero {
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+  padding: 0 50px;
+  text-align: right;
+}
+
+.about-hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: right;
+  letter-spacing: 2px;
+  color: #ffd700;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.about-hero p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 2;
+  max-width: 600px;
+  margin-top: 10px;
+  text-align: right;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  margin-right: 20px;
+}
+
+/* Content Section */
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-section .icon {
+  height: 150px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  color: #007ba7;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 85%;
+}
+
+/******************************************************
+ * Mobile Responsive Styles (max-width: 768px)
+ ******************************************************/
+@media (max-width: 768px) {
+  .about-hero {
+    height: 50vh; /* Reduced height for mobile */
+    padding: 0 10px; /* Less side padding */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Center text */
+  }
+
+  .about-hero h1 {
+    font-size: 2rem; /* Smaller title */
+    margin: 0 0 10px 0;
+    word-break: break-word; /* Allow long words to break */
+  }
+
+  .about-hero p {
+    font-size: 1rem; /* Smaller paragraph */
+    margin: 0;
+    padding: 0 10px; /* Add horizontal padding for text */
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr; /* Stack content vertically */
+    gap: 10px;
+    padding: 20px 10px;
+  }
+
+  .about-section {
+    height: auto; /* Let height adjust to content */
+    padding: 15px;
+  }
+
+  .about-section .icon {
+    height: 120px;
+    margin-bottom: 10px;
+  }
+
+  .about-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .about-section p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+}
