@@ -1,3 +1,27 @@
+/* Header styling for Top Sets page */
+.topsets-header {
+  text-align: center;
+  padding: 40px 20px;      /* Increase padding to give breathing room */
+  background-color: #f7f7f7; /* Optional: light background */
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.topsets-header h1 {
+  font-size: 2.8rem;   /* Adjust font size as needed */
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.subheader {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0 auto;
+  max-width: 800px; /* Optional: restrict width for readability */
+}
+
+
+
 .lego-container {
   display: grid;
   grid-template-columns: repeat(

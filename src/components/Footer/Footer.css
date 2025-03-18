@@ -63,6 +63,17 @@
   text-align: right;
 }
 
+.footer-disclaimer {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  color: #cccccc;  /* lighter color for disclaimer text */
+  line-height: 1.4;
+  text-align: center;
+  border-top: 1px solid #444;  /* optional divider */
+}
+
+
 /******************************************************
  * Mobile Responsive Styles (max-width: 768px)
  ******************************************************/

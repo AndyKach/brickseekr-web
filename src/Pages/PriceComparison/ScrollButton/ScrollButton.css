@@ -1,6 +1,5 @@
-/* See All Button */
 .see-all-button {
-  /* display: flex;*/
+  display: inline-flex; /* Use inline-flex to keep it on one line */
   align-items: center;
   justify-content: center;
   gap: 10px; /* Space between text and arrow */
@@ -27,9 +26,4 @@
 
 .see-all-button:hover svg {
   transform: translateX(5px); /* Moves arrow slightly to the right */
-}
-@media (max-width: 768px) {
-  .see-all-button {
-    display: none;
-  }
 }

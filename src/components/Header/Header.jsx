@@ -2,43 +2,33 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
 import logo from "./logo_brick.png";
+import SearchWithSuggestions from "../SearchWithSuggestions/SearchWithSuggestions";
 
 function Header() {
-  const [searchQuery, setSearchQuery] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Reset search and close mobile menu on route change
+  // Close mobile menu on route change
   useEffect(() => {
-    setSearchQuery("");
     setIsMenuOpen(false);
   }, [location.pathname]);
-
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    const cleanedQuery = searchQuery
-      .split(" ")
-      .map((word) => word.trim())
-      .filter((word) => word !== "")
-      .join(" ");
-    if (cleanedQuery) {
-      navigate(`/search?q=${encodeURIComponent(cleanedQuery)}`);
-    }
-  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Callback when a suggestion is selected from the search autocomplete
+  const handleSelect = (selectedSet) => {
+    if (selectedSet && selectedSet.legoset_id) {
+      navigate(`/search?q=${encodeURIComponent(selectedSet.legoset_id)}`);
+    }
+  };
+
   return (
     <header>
       <div className="NavBar">
-        {/* Left Section: Logo + Hamburger (on mobile) + Desktop Nav (desktop only) */}
+        {/* Left Section: Logo, Hamburger, and Navigation */}
         <div className="left-section">
           <Link to="/" className="logo-link">
             <img src={logo} alt="logo" className="logo" />
@@ -58,23 +48,15 @@ function Header() {
           </nav>
         </div>
 
-        {/* Right Section: Desktop Search Bar (desktop only) */}
+        {/* Right Section: Desktop Search Bar */}
         <div className="right-section">
           {location.pathname !== "/" && (
-            <form className="search-bar" onSubmit={handleSearchSubmit}>
-              <input
-                type="text"
-                placeholder="Search for LEGO sets..."
-                value={searchQuery}
-                onChange={handleSearchChange}
-              />
-              <button type="submit">🔍</button>
-            </form>
+            <SearchWithSuggestions onSelect={handleSelect} />
           )}
         </div>
       </div>
 
-      {/* Mobile: When hamburger is clicked, show mobile navigation above search */}
+      {/* Mobile Navigation and Search */}
       <div className="mobile-nav-container">
         {isMenuOpen && (
           <nav className="mobile-nav">
@@ -89,18 +71,9 @@ function Header() {
           </nav>
         )}
 
-        {/* Mobile Search Bar (always visible on mobile) */}
         {location.pathname !== "/" && (
           <div className="mobile-search">
-            <form className="search-bar" onSubmit={handleSearchSubmit}>
-              <input
-                type="text"
-                placeholder="Search for LEGO sets..."
-                value={searchQuery}
-                onChange={handleSearchChange}
-              />
-              <button type="submit">🔍</button>
-            </form>
+            <SearchWithSuggestions onSelect={handleSelect} />
           </div>
         )}
       </div>

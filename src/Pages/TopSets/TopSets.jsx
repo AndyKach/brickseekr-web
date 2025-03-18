@@ -1,4 +1,3 @@
-// TopSets.jsx
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "./TopSets.css";
@@ -14,7 +13,7 @@ function TopSets() {
   const currentPage = page ? parseInt(page, 10) : 1;
   const itemsPerPage = 50;
 
-  // Optional: Redirect if an invalid page is provided (e.g., not 1 or 2)
+  // Redirect if an invalid page is provided (e.g., not 1 or 2)
   useEffect(() => {
     if (currentPage !== 1 && currentPage !== 2) {
       navigate("/top-sets/1", { replace: true });
@@ -37,12 +36,9 @@ function TopSets() {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        // If the new API returns the array directly in data.result
+        // Assuming the API returns an array of sets in data.result
         let setsArray = data.result;
-        // If the response still nests the array in data.result.result,
-        // you can change the line above to:
-        // let setsArray = data.result.result;
-        // Sort the sets by rating descending (optional)
+        // Sort sets by rating descending (optional)
         setsArray.sort((a, b) => b.rating - a.rating);
         setLegoSets(setsArray);
       } catch (error) {
@@ -64,6 +60,13 @@ function TopSets() {
 
   return (
     <>
+      <header className="topsets-header">
+        <h1>Top LEGO Sets to Invest in Now</h1>
+        <p className="subheader">
+          Curated sets with the best investment potential based on exclusive
+          market insights.
+        </p>
+      </header>
       <div className="lego-container">
         {displayedSets.map((set) => (
           <Link to={`/search?q=${set.id}`} className="lego-link" key={set.id}>
@@ -74,6 +77,7 @@ function TopSets() {
                 className="lego-image"
               />
               <p className="lego-name">{`LEGO ${set.id} ${set.name}`}</p>
+              <p className="set-rating">Rating: {set.rating}/100</p>
             </div>
           </Link>
         ))}

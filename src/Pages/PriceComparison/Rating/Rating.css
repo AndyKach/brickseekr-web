@@ -1,91 +1,95 @@
 .rating-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: relative;
-    margin: 20px 0;
-  }
-  
-  .progress-bar {
-    width: 200px;
-    height: 20px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .progress {
-    height: 100%;
-    background-color: #ff9933;
-    border-radius: 10px 0 0 10px;
-  }
-  
-  .rating-value {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .info-button {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .info-button:hover {
-    background-color: black;
-    color: white;
-  }
-  
-  .info-popup {
-    position: absolute;
-    top: 40px; /* Adjust to place below the button */
-    left: -20px; /* Adjust alignment */
-    background-color: #ffffff; /* White background */
-    color: #333; /* Darker text for readability */
-    border: 1px solid #cccccc; /* Subtle border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    padding: 15px; /* Add inner spacing */
-    z-index: 1000; /* Ensure it's above other elements */
-    width: 280px; /* Adjust width */
-    font-size: 14px; /* Standard font size */
-    line-height: 1.6; /* Comfortable line spacing */
-  }
-  
-  .info-popup::after {
-    content: "";
-    position: absolute;
-    top: 20px; /* Align with the middle of the box */
-    left: -10px; /* Triangle closer to the label */
-    width: 0;
-    height: 0;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent #ffffff transparent transparent;
-    z-index: 1;
-  }
-  
-  .info-popup::before {
-    position: absolute;
-    top: 20px; /* Align with the middle of the box */
-    left: -12px; /* Slightly larger for border effect */
-    width: 0;
-    height: 0;
-    border-width: 12px;
-    border-style: solid;
-    border-color: transparent #cccccc transparent transparent;
-    z-index: 0;
-  }
-  
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  width: 200px;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #ff9933;
+  border-radius: 12px 0 0 12px;
+}
+
+.rating-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.info-button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.info-button:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.1);
+}
+
+.info-popup {
+  position: absolute;
+  top: 45px;
+  left: -20px;
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  padding: 18px;
+  z-index: 1000;
+  width: 300px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.info-popup ul{
+  margin-left: 40px;
+}
+
+.info-popup::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+  z-index: 1;
+}
+
+.info-popup::before {
+  position: absolute;
+  top: -12px;
+  left: 28px;
+  width: 0;
+  height: 0;
+  border-width: 12px;
+  border-style: solid;
+  border-color: transparent transparent #dddddd transparent;
+  z-index: 0;
+}

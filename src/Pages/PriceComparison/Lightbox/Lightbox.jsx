@@ -54,12 +54,16 @@ function Lightbox({ images }) {
               alt={images[currentImageIndex].alt}
               className="large-image"
             />
-            <button className="nav-button prev" onClick={handlePrev}>
-              ❮
-            </button>
-            <button className="nav-button next" onClick={handleNext}>
-              ❯
-            </button>
+            {images.length > 1 && (
+              <>
+                <button className="nav-button prev" onClick={handlePrev}>
+                  ❮
+                </button>
+                <button className="nav-button next" onClick={handleNext}>
+                  ❯
+                </button>
+              </>
+            )}
           </div>
         </div>
       )}

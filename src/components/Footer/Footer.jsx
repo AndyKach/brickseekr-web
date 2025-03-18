@@ -22,8 +22,6 @@ export default function Footer() {
           >
             About
           </span>
-          {/* <Link to="/services" className="footer_navig">Services</Link> */}
-          {/* <Link to="/blog" className="footer_navig">Blog</Link> */}
           <span
             onClick={() => handleNavigation("/about-us")}
             className="footer_navig"
@@ -33,15 +31,34 @@ export default function Footer() {
         </nav>
         <button
           className="back-to-top"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => {
+            console.log("Back to Top clicked");
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+          }}
         >
           Back to Top
         </button>
       </div>
-      <div className="footer-bottom">
-        <p>Copyright © 2024 Brick Seekr — All rights reserved</p>
+
+      <div className="footer-disclaimer">
         <p>
-          Designed and developed by <strong>Your Company</strong>
+          BrickSeekr is an independent price comparison website and is not
+          affiliated with, endorsed by, or sponsored by The LEGO Group. LEGO®,
+          the LEGO logo, and the Minifigure are trademarks of the LEGO Group.
+          All product names, images, and descriptions used on this site are for
+          informational and comparative purposes only. Prices and availability
+          are subject to change and are collected from third-party retailers.
+          BrickSeekr does not guarantee the accuracy of the listed prices or
+          product availability. BrickSeekr does not collect, store, or process
+          any personal data. This website is solely for informational purposes
+          and does not track users.
+        </p>
+      </div>
+      <div className="footer-bottom">
+        <p>
+          © 2025 Brick Seekr. Created and maintained by{" "}
+          <strong>Andrei Kachanov</strong>.
         </p>
       </div>
     </footer>

@@ -1,4 +1,3 @@
-// PriceComparison.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import { fetchSetData } from "./FetchSetData/fetchSetData";
@@ -23,41 +22,36 @@ function PriceComparison() {
   const [searchParams] = useSearchParams();
   const setId = searchParams.get("q");
 
-  // "data" will contain { legoset, prices }
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [dataFetched, setDataFetched] = useState(true);
   const shopsContainerRef = useRef(null);
 
   useEffect(() => {
     if (!setId) {
-      setError("No LEGO set ID provided.");
+      setError("No LEGO® set ID provided.");
       setLoading(false);
       return;
     }
-
     const loadData = async () => {
       try {
         const result = await fetchSetData(setId);
-        if (!result || !result.legoset || !result.prices)
+        if (!result || !result.legoset) {
           throw new Error("Set not found");
+        }
         setData(result);
-        setDataFetched(true);
       } catch (err) {
-        setError("Sorry, we couldn't find the set.");
-        setDataFetched(false);
+        console.error("Error fetching set data:", err);
+        setError("Sorry, we couldn't find your set.");
       } finally {
         setLoading(false);
       }
     };
-
     loadData();
   }, [setId]);
 
-  if (loading) return <p>Loading LEGO Set...</p>;
-
-  if (!dataFetched || !data) {
+  if (loading) return <p>Loading LEGO® Set...</p>;
+  if (error || !data) {
     return (
       <div className="main_PriceComparison">
         <section
@@ -76,9 +70,8 @@ function PriceComparison() {
     );
   }
 
-  // Destructure the result returned from fetchSetData
+  // Destructure fetched data
   const { legoset, prices } = data;
-
   const description =
     legoset.description && legoset.description !== "-"
       ? legoset.description
@@ -120,9 +113,8 @@ function PriceComparison() {
   const weight = legoset.weigh;
   const minAge = legoset.ages_range?.min;
   const pieces = legoset.pieces;
-  const minifigures = legoset.minifigures_count;
+  const minifigures = legoset.minifigures_count ?? 0;
 
-  // Get the lowest price from the prices object
   const getLowestPrice = () => {
     if (!prices) return "N/A";
     const validPrices = Object.values(prices)
@@ -195,10 +187,11 @@ function PriceComparison() {
       isOutOfStock: shopPriceStr === "N/A" || shopPriceStr === undefined,
     };
   });
-
   sortedShops.sort((a, b) => a.price - b.price);
-  const shopsWithPrice = sortedShops.filter((shop) => !shop.isOutOfStock);
-  const shopsWithoutPrice = sortedShops.filter((shop) => shop.isOutOfStock);
+  const shopsWithPrice = sortedShops.filter((shop) => shop.price !== Infinity);
+  const shopsWithoutPrice = sortedShops.filter(
+    (shop) => shop.price === Infinity
+  );
 
   const renderShopBlock = (shopIndex, logo, shopName, shopUrl, rating) => {
     let shopPrice = prices[shopIndex]?.price;
@@ -212,7 +205,6 @@ function PriceComparison() {
     }
     const priceExists = shopPrice && shopPrice !== "N/A";
     const isOutOfStock = shopPrice === "N/A" || shopPrice === undefined;
-
     return (
       <div className="shop_block" key={shopIndex}>
         <img src={logo} alt={`${shopName} Logo`} className="shop_logo" />
@@ -246,7 +238,7 @@ function PriceComparison() {
           <Slider setId={setId} />
         </div>
         <div className="set_description">
-          <div className="h1">{`LEGO ${legoset.id} - ${legoset.name}`}</div>
+          <div className="h1">{`LEGO® ${legoset.id} - ${legoset.name}`}</div>
           <div className="set_description_container">
             <div className="rating-section">
               <Rating value={legoset.rating} />
@@ -254,44 +246,38 @@ function PriceComparison() {
             <div className="clearfix"></div>
             {description && (
               <div className="desc_text">
-                <strong>Description:</strong>{" "}
+                <strong>Description:</strong>
                 <div className="description">{description}</div>
               </div>
             )}
             {themeDisplay && (
               <div className="short_desc">
-                <strong>Theme:</strong>{" "}
+                <strong>Theme:</strong>
                 <div className="theme">{themeDisplay}</div>
               </div>
             )}
             {year && (
               <div className="short_desc">
-                <strong>Year Released:</strong>{" "}
+                <strong>Year Released:</strong>
                 <div className="year">{legoset.year}</div>
               </div>
             )}
             {weight && (
               <div className="short_desc">
-                <strong>Weight:</strong>{" "}
+                <strong>Weight:</strong>
                 <div className="weight">{legoset.weigh} g</div>
               </div>
             )}
             {dimensionsDisplay && (
               <div className="short_desc">
-                <strong>Dimensions:</strong>{" "}
+                <strong>Dimensions:</strong>
                 <div className="dimensions">{dimensionsDisplay}</div>
               </div>
             )}
             {minAge && (
               <div className="short_desc">
-                <strong>Ages:</strong>{" "}
+                <strong>Ages:</strong>
                 <div className="ages">{legoset.ages_range?.min}+</div>
-              </div>
-            )}
-            {minifigures !== null && (
-              <div className="short_desc">
-                <strong>Minifigures:</strong>{" "}
-                <div className="minifigures">{legoset.minifigures_count}</div>
               </div>
             )}
             <div className="short_desc">Items contains of:</div>
@@ -310,13 +296,15 @@ function PriceComparison() {
                   alt="minifig image"
                   className="mnfg"
                 />
-                <p>{legoset.minifigures_count}</p>
+                <p>{minifigures}</p>
               </div>
             </div>
             <div className="best_deal">
               Best deal:
               <p className="bd">{lowestPrice}</p>
-              <ScrollButton targetRef={shopsContainerRef} />
+              {shopsWithPrice.length > 0 && (
+                <ScrollButton targetRef={shopsContainerRef} />
+              )}
             </div>
           </div>
         </div>
@@ -324,26 +312,35 @@ function PriceComparison() {
 
       <div className="shops_container" ref={shopsContainerRef}>
         <h2>Offers</h2>
-        {shopsWithPrice.map((shop) => {
-          const shopInfo = shopDetails.find((s) => s.id === shop.shopIndex);
-          return renderShopBlock(
-            shop.shopIndex,
-            shopInfo.logo,
-            shopInfo.name,
-            shopInfo.url,
-            shopInfo.rating
-          );
-        })}
-        {shopsWithoutPrice.map((shop) => {
-          const shopInfo = shopDetails.find((s) => s.id === shop.shopIndex);
-          return renderShopBlock(
-            shop.shopIndex,
-            shopInfo.logo,
-            shopInfo.name,
-            shopInfo.url,
-            shopInfo.rating
-          );
-        })}
+        {shopsWithPrice.length > 0 ? (
+          <>
+            {shopsWithPrice.map((shop) => {
+              const shopInfo = shopDetails.find((s) => s.id === shop.shopIndex);
+              return renderShopBlock(
+                shop.shopIndex,
+                shopInfo.logo,
+                shopInfo.name,
+                shopInfo.url,
+                shopInfo.rating
+              );
+            })}
+            {shopsWithoutPrice.map((shop) => {
+              const shopInfo = shopDetails.find((s) => s.id === shop.shopIndex);
+              return renderShopBlock(
+                shop.shopIndex,
+                shopInfo.logo,
+                shopInfo.name,
+                shopInfo.url,
+                shopInfo.rating
+              );
+            })}
+          </>
+        ) : (
+          <p>
+            The LEGO set is currently not available in shops: Lego, Capi Cap,
+            Sparkys, Museum of Bricks, Kosticky shop.
+          </p>
+        )}
       </div>
     </>
   );

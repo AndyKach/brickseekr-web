@@ -1,21 +1,17 @@
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 import "./HomePage.css";
-import index_img from "./index_batman.png";
+import index_img from "./hp_main.jpg";
+import index_topsets from "./TopSets.jpg";
 import HomePage_mini_photo from "./mini_photo.png";
+import SearchWithSuggestionsHP from "../../components/SearchWithSuggestionsHP/SearchWithSuggestionsHP";
 
 function HomePage() {
-  const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault(); // Prevent page reload
-    if (searchQuery.trim() !== "") {
-      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+  const handleSelect = (selectedSet) => {
+    if (selectedSet && selectedSet.legoset_id) {
+      navigate(`/search?q=${encodeURIComponent(selectedSet.legoset_id)}`);
     }
   };
 
@@ -25,22 +21,13 @@ function HomePage() {
         className="hero"
         style={{ backgroundImage: `url(${index_img})` }}
       >
-        <form className="search-container-hero" onSubmit={handleSearchSubmit}>
-          <input
-            type="text"
-            placeholder="Search for LEGO sets..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-          <button type="submit">🔍</button>
-        </form>
+        <SearchWithSuggestionsHP onSelect={handleSelect} />
       </section>
-
       <section className="feature-cards">
         <div className="card">
-          <img src={index_img} alt="Top Sets" />
+          <img src={index_topsets} alt="Top Sets" />
           <h3>Top 100 Sets</h3>
-          <p>Discover the most popular Lego sets of all time.</p>
+          <p>Discover the most popular Lego sets to invest.</p>
           <Link to="/top-sets" className="cta-button">
             Explore
           </Link>

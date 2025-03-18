@@ -11,16 +11,23 @@ function Slider({ setId }) {
     const loadImages = async () => {
       try {
         const data = await fetchSetData(setId);
-        // Use data.legoset.images instead of data.images
         const imagesObj = data.legoset.images;
-        // Filter keys starting with "big_image"
-        const imageKeys = Object.keys(imagesObj).filter((key) =>
+        // Try to find keys starting with "big_image"
+        let imageKeys = Object.keys(imagesObj).filter((key) =>
           key.startsWith("big_image")
         );
-        if (imageKeys.length === 0) {
-          console.error("No big images found for the set.");
+        // If no big images, and if normalSize exists, use it
+        if (imageKeys.length === 0 && imagesObj.normalSize) {
+          setImages([
+            {
+              id: "normalSize",
+              src: imagesObj.normalSize,
+              alt: `Image of ${data.legoset.name}`,
+            },
+          ]);
           return;
         }
+        // Otherwise, map the found keys to an images array
         const imagesArray = imageKeys.map((key) => ({
           id: key,
           src: imagesObj[key],
@@ -57,21 +64,28 @@ function Slider({ setId }) {
               src={image.src}
               alt={image.alt}
               className={`Set_image ${index === currentSlide ? "active" : ""}`}
+              onClick={() => onImageClick && onImageClick(index)}
             />
           ))}
         </div>
-        <button onClick={handlePrev} className="nav-button" id="prev">
-          ❮
-        </button>
-        <button onClick={handleNext} className="nav-button" id="next">
-          ❯
-        </button>
+        {images.length > 1 && (
+          <>
+            <button onClick={handlePrev} className="nav-button" id="prev">
+              ❮
+            </button>
+            <button onClick={handleNext} className="nav-button" id="next">
+              ❯
+            </button>
+          </>
+        )}
       </div>
-      <ImageDots
-        totalDots={images.length}
-        currentSlide={currentSlide}
-        setCurrentSlide={setCurrentSlide}
-      />
+      {images.length > 1 && (
+        <ImageDots
+          totalDots={images.length}
+          currentSlide={currentSlide}
+          setCurrentSlide={setCurrentSlide}
+        />
+      )}
     </>
   );
 }
