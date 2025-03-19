@@ -8,7 +8,9 @@
   background-size: 100%;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
 body {
   height: 100%; /* Make sure the page fills the viewport */
   overflow-x: hidden;

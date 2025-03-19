@@ -5,11 +5,11 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // Smooth scrolling
-    });
-  }, [pathname]); // Executes on every route change
+    // For older browsers (Safari, etc.)
+    document.body.scrollTop = 0;
+    // For modern browsers
+    document.documentElement.scrollTop = 0;
+  }, [pathname]);
 
   return null;
 }

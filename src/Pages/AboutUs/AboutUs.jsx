@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import React from 'react';
 import './AboutUs.css';
-import AboutUs_background from './about_us_background.png';
-import AboutUs_mini_photo from './mini_photo.png';
+import AboutUs_background from "./about_us_background.png";
 import AboutUs_OurMission from "./OurMission.jpg";
 import AboutUs_ContactUs from "./ContactUs.jpg";
 import AboutUs_OurTeam from "./OurTeam.jpg";

@@ -23,18 +23,24 @@ export default function Footer() {
             About
           </span>
           <span
-            onClick={() => handleNavigation("/about-us")}
+            onClick={() =>
+              (window.location.href = "mailto:brickseekr.info@gmail.com")
+            }
             className="footer_navig"
           >
             Contact
+          </span>
+          <span
+            onClick={() => handleNavigation("/privacy-policy")}
+            className="footer_navig"
+          >
+            Privacy Policy
           </span>
         </nav>
         <button
           className="back-to-top"
           onClick={() => {
-            console.log("Back to Top clicked");
-            document.documentElement.scrollTop = 0;
-            document.body.scrollTop = 0;
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
           Back to Top
@@ -60,6 +66,7 @@ export default function Footer() {
           © 2025 Brick Seekr. Created and maintained by{" "}
           <strong>Andrei Kachanov</strong>.
         </p>
+        <p>An independent LEGO® price comparison site.</p>
       </div>
     </footer>
   );
