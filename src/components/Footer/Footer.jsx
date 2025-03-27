@@ -30,12 +30,6 @@ export default function Footer() {
           >
             Contact
           </span>
-          <span
-            onClick={() => handleNavigation("/privacy-policy")}
-            className="footer_navig"
-          >
-            Privacy Policy
-          </span>
         </nav>
         <button
           className="back-to-top"

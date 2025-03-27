@@ -16,7 +16,7 @@ function AboutUs() {
         }}
       >
         <div className="hero-content">
-          <h1>About Us</h1>
+          <h1>About The Project</h1>
           <p>
             {" "}
             Welcome to BrickSeekr, your ultimate destination for finding the

@@ -42,7 +42,7 @@ function Header() {
                 <Link to="/top-sets">Top Sets</Link>
               </li>
               <li>
-                <Link to="/about-us">About Us</Link>
+                <Link to="/about-us">About The Project</Link>
               </li>
             </ul>
           </nav>

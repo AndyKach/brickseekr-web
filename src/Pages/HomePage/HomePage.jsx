@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import "./HomePage.css";
-import index_img from "./hp_main.jpg";
+import index_img from "./hp_back_main.jpg";
 import index_topsets from "./TopSets.jpg";
 import HomePage_mini_photo from "./mini_photo.png";
 import SearchWithSuggestionsHP from "../../components/SearchWithSuggestionsHP/SearchWithSuggestionsHP";
@@ -34,7 +34,7 @@ function HomePage() {
         </div>
         <div className="card">
           <img src={HomePage_mini_photo} alt="About Us" />
-          <h3>About Us</h3>
+          <h3>About The Project</h3>
           <p>Learn more about how we help you save on Lego.</p>
           <Link to="/about-us" className="cta-button">
             Learn More
